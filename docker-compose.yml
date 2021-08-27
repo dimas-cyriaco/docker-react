@@ -4,20 +4,6 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
-      - '3000:3000'
-    volumes:
-      - /home/node/node_modules
-      - .:/home/node
-    stdin_open: true
-
-  tests:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-      - /home/node/node_modules
-      - .:/home/node
-    stdin_open: true
-    command: ["npm", "run", "test"]
+      - '80:80'
